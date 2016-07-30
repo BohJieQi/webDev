@@ -1,0 +1,7 @@
+#getJoke {
+  width: 300px;
+  height: 100px;
+  background-color: grey;
+  border: 5px solid black;
+  border-radius: 10px;
+}
