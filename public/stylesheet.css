@@ -1,7 +1,56 @@
-#getJoke {
-  width: 300px;
-  height: 100px;
-  background-color: grey;
-  border: 5px solid black;
-  border-radius: 10px;
+body {
+  background-color:	#8B008B;
+}
+
+#Jokebox {
+  margin-top: 300px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 300px;
+}
+
+.box {
+  padding-bottom: 50px;
+
+}
+
+#setup {
+  color: white;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+#punchline {
+  color: white;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.blueBtn {
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 22px;
+  text-decoration: none;
+  position: relative;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  display: inline-block;
+}
+
+.blueBtn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blueBtn:hover {
+  background-color: #6FC6FF;
+}
+
+span {
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }

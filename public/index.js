@@ -1,5 +1,5 @@
 $(function() {
-    $("#getJoke").click(
+    $(".blueBtn").click(
         function() {
             $.get("/jokes",function(data){
                 // TODO: change HTML instead of alert
