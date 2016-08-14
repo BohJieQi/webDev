@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 
-app.listen(3000, function () {
-	  console.log('Example app listening on port 3000!');
-});
+// app.listen(3000, function () {
+// 	  console.log('Example app listening on port 3000!');
+// });
 
-// app.listen(process.env.PORT || 8888);
+app.listen(process.env.PORT || 8888);
 
 app.use(express.static("public"));
 
