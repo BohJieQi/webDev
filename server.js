@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 
-app.listen(process.env.PORT || 8888);
+app.listen(3000, function () {
+	  console.log('Example app listening on port 3000!');
+});
 
-// app.get('/', function(req, res) {
-    // res.sendFile(__dirname + '/stylesheet.css');
-// })
+// app.listen(process.env.PORT || 8888);
 
 app.use(express.static("public"));
 
@@ -16,4 +16,3 @@ var jokes=[{setup:"Our wedding was so beautiful,",punchline:"even the cake was i
 app.route("/jokes").get(function(req,res,next){
 	res.send(jokes[Math.floor(Math.random()*jokes.length)]);
 });
-
