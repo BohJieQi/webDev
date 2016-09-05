@@ -1,4 +1,5 @@
-textbool = true;
+var textbool = true;
+var index = 0;
 
 $(function() {
     $(".blue").click(
@@ -7,6 +8,15 @@ $(function() {
                 // TODO: change HTML instead of alert
                 $("#setup").html(data.setup);
                 $("#punchline").html(data.punchline);
+
+                index = data.id;
+
+                if (data.votes === undefined) {
+                    $("#Votes").html(0);
+                } else {
+                    $("#Votes").html(data.votes);
+                }
+
             },"json")
         }
     );
@@ -18,7 +28,6 @@ $(function() {
         if (textbool) {
           textbool = false;
           $(this).html("Click to show punchline!");
-          // $(this).addClass("spanSub");
           $(this).css({
             "font-family": "Roboto",
             "color": "white"
@@ -27,7 +36,6 @@ $(function() {
         else {
           textbool = true;
           $(this).html("Click to hide punchline!");
-          // $(this).addClass("spanSub");
           $(this).css({
             "font-family": "Roboto",
             "color": "white"
@@ -38,4 +46,38 @@ $(function() {
         document.getElementById("reveal").classList.toggle("off");
         }
     );
+});
+
+$(function() {
+  $(".green").click(
+    function() {
+    // $.post("/upvote");
+    $.ajax({
+      url: '/upvote',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({id:index}),
+
+      success: function(data, status, xhr) {
+          $("#Votes").html(data.votes);
+      }
+    });
+  });
+});
+
+$(function() {
+  $(".red").click(
+    function() {
+    // $.post("/downvote");
+    $.ajax({
+      url: '/downvote',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({id:index}),
+
+      success: function(data, status, xhr) {
+          $("#Votes").html(data.votes);
+      }
+    });
+  });
 });

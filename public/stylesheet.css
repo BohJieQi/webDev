@@ -23,6 +23,31 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.spanSub {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.skeleton {
+  margin: inherit;
+  width:inherit;
+  overflow:hidden;
+  height: 0px;
+  transition: 0.5s;
+}
+
+.off {
+  height: 0px;
+  overflow: hidden;
+}
+
+.on {
+  height: 30px;
+}
+
+/*Buttons*/
 .Btn {
   padding-top: 5px;
   text-align: center;
@@ -82,28 +107,11 @@ body {
   background-color: #48E68B;
 }
 
-.spanSub {
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+/*End of Buttons*/
 
-.skeleton {
-  margin: inherit;
-  width:inherit;
-  overflow:hidden;
-  height: 0px;
-  transition: 0.5s;
-}
-
-.off {
-  height: 0px;
-  overflow: hidden;
-}
-
-.on {
-  height: 30px;
+table tr:last-child td{
+  font-size: 20px;
+  padding-top: 15px;
 }
 
 a {
