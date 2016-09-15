@@ -1,6 +1,23 @@
 var textbool = true;
 var index = 0;
 
+$( document ).ready(function() {
+      $.get("/jokes",function(data){
+          // TODO: change HTML instead of alert
+          $("#setup").html(data.setup);
+          $("#punchline").html(data.punchline);
+
+          index = data.id;
+
+          if (data.votes === undefined) {
+              $("#Votes").html(0);
+          } else {
+              $("#Votes").html(data.votes);
+          }
+
+      },"json");
+});
+
 $(function() {
     $(".blue").click(
         function() {
@@ -27,7 +44,7 @@ $(function() {
       function toggleClass() {
         if (textbool) {
           textbool = false;
-          $(this).html("Click to show punchline!");
+          $(this).html("Click to show answer!");
           $(this).css({
             "font-family": "Roboto",
             "color": "white"
@@ -35,7 +52,7 @@ $(function() {
         }
         else {
           textbool = true;
-          $(this).html("Click to hide punchline!");
+          $(this).html("Click to hide answer!");
           $(this).css({
             "font-family": "Roboto",
             "color": "white"
